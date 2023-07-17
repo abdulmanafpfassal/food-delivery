@@ -23,6 +23,7 @@ class LocationRepo {
       }
     }
 
+
     return await Geolocator.getCurrentPosition();
   }
 

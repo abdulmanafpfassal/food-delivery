@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:fooddelivery/Helper/utils.dart';
 import 'package:fooddelivery/Service/Repo/location_repo.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,8 +14,10 @@ class LocationProvider with ChangeNotifier {
   List<Placemark> placeMarks = [];
   String selectedLocation = "Search Location";
 
-  setLocationData() async {
+  setLocationData(BuildContext context) async {
+    showLoading(context);
     locationData = await _locationRepo.determinePosition();
+    Navigator.pop(context);
     latitude = locationData!.latitude.toString();
     longitude = locationData!.longitude.toString();
 

@@ -78,7 +78,7 @@ class _LocationSearchState extends State<LocationSearch> {
             SizedBox(height: 10.h,),
             InkWell(
               onTap: (){
-                context.read<LocationProvider>().setLocationData();
+                context.read<LocationProvider>().setLocationData(context);
               },
               child: Row(
                 children: [

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fooddelivery/Screens/Prelogin/login_page.dart';
 import 'package:fooddelivery/Service/Provider/location_provider.dart';
+import 'package:fooddelivery/Service/Provider/resturant_list_provider.dart';
 import 'package:provider/provider.dart';
 
 
@@ -11,6 +12,7 @@ void main() {
   runApp(MultiProvider(
     providers: [
         ChangeNotifierProvider(create: (context) => LocationProvider()),
+        ChangeNotifierProvider(create: (context) => RestaurantListProvider()),
     ],
     child: MyApp(),
   ));
